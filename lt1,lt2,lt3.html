@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Đếm số trong mảng bằng hoặc lớn hơn 10 </title>
+</head>
+
+<body>
+    <script>
+        addEventListener('DOMContentLoaded', function () {
+            const array = [4, 12, 7, 10, 25, 3, 18, 6, 13, 8];
+
+            function countGreaterOrEqualTen(arr) {
+                // array có thể viết tắt thành arr
+                let count = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] >= 10) {
+                        count++;
+                        console.log(arr[i])
+                    }
+                }
+                return count;
+            }
+
+            const result1 = countGreaterOrEqualTen(array);
+            console.log("Số phần tử lớn hơn hoặc bằng 10 là:", result1);
+
+            function findMaxElementAndPosition(array) {
+                let maxElement = array[0];
+                let maxPosition = 0;
+
+                for (let i = 1; i < array.length; i++) {
+                    if (array[i] > maxElement) {
+                        maxElement = array[i];
+                        maxPosition = i;
+                    }
+                }
+
+                return { maxElement, maxPosition };
+            }
+            const result2 = findMaxElementAndPosition(array);
+            console.log("Phần tử lớn nhất trong mảng là:", result2.maxElement);
+            console.log("Vị trí của phần tử lớn nhất là:", result2.maxPosition);
+
+            function calculateAverage(arr) {
+                let sum = 0;
+                for (let i = 0; i < arr.length; i++) {
+                    sum += arr[i];
+                }
+                return sum / arr.length;
+            }
+
+            const average = calculateAverage(array);
+            console.log("Giá trị trung bình của các phần tử trong mảng là:", average.toFixed(2));
+        });
+    </script>
+</body>
+
+</html>

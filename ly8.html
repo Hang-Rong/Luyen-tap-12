@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sắp xếp chuỗi </title>
+</head>
+
+<body>
+    <script>
+        // Định nghĩa hàm so sánh 
+        function compare(a, b) {
+            return b - a; // Sắp xếp theo thứ tự giảm dần
+        }
+        // Hàm kiểm tra xem một giá trị có phải là số hay không
+        function isNumber(value) {
+            return !isNaN(value);
+        }
+        let numbers = [];
+        for (let i = 0; i < 10; i++) {
+            let num = parseInt(prompt("Nhập phần tử thứ " + (i + 1) + ":"));
+            if (!isNumber(num)) {
+                alert("Giá trị không hợp lệ. Vui lòng nhập lại.");
+                break; // Dừng vòng lặp nếu giá trị không hợp lệ
+            } else {
+                numbers.push(num);
+            }
+        }
+        alert(numbers.sort(compare));
+       
+    </script>
+</body>
+
+</html>

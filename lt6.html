@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm tra V đã nhập</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function check(arr, V) {
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] === V) {
+                        return true; // Phần tử V tồn tại trong mảng
+                    }
+                }
+                return false; // Phần tử V không tồn tại trong mảng
+            }
+
+            const array = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19];
+            
+            const V = parseInt(prompt("Nhập một số nguyên V:"));
+
+            // Kiểm tra xem V có tồn tại trong mảng không và hiển thị kết quả
+            if (check(array, V)) {
+                alert(V + "  thuộc mảng số nguyên.");
+            } else {
+                alert(V + " không thuộc mảng sô nguyên.");
+            }
+        });
+    </script>
+</body>
+</html>

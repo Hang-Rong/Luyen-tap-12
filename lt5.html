@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Đếm số nguyên âm trong chuỗi </title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            function countNegativeNumbers(inputString) {
+                
+                const elements = inputString.split(/[\s,]/);
+                let count = 0;
+                
+                
+                for (let i = 0; i < elements.length; i++) {
+                    const number = parseFloat(elements[i]);
+                    if (!isNaN(number) && number < 0) {
+                        count++;
+                    }
+                }
+
+                return count;
+            }
+
+            
+            const inputString = "-1, 2, -3, 4, -5, 6, -7, 8, 9, -10";
+            const result = countNegativeNumbers(inputString);
+
+            console.log("Chuỗi đầu vào:", inputString);
+            console.log("Số lượng số nguyên âm trong chuỗi là:", result);
+        });
+    </script>
+</body>
+</html>
